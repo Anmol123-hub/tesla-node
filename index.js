@@ -7,7 +7,7 @@ let config = require("./config.json")
 
 let Schema = mongoose.Schema
 let ObjectId = Schema.ObjectId
-let fs = require('fs')
+
 let app = express()
 const PORT = process.env.PORT || 2525
 
@@ -61,6 +61,19 @@ app.post("/customerrequest", (req, res) => {
         carModel:a.car
     })
     customer.save().then((updateRes) => res.send("Updated"))
+})
+
+app.post("/checkdealer",(req,res)=>{
+    let a = req.body
+    // console.log(a);
+    Dealername.find({ dealerEmail: a.email, dealerPass: a.pass }).then((db)=>{
+        if(Object.keys(db).length==0){
+            res.send("not found")
+        }
+        else{
+            res.send("found")
+        }
+    })
 })
 
 
