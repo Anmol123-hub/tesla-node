@@ -71,6 +71,12 @@ app.get("/superadmin",(req,res)=>{
 app.get("/drive",(req,res)=>{
     res.sendFile(__dirname + '/tesla_angular/index.html');
 })
+app.get("/admin/accept",(req,res)=>{
+    res.sendFile(__dirname + '/tesla_angular/index.html');
+})
+app.get("/admin/reject",(req,res)=>{
+    res.sendFile(__dirname + '/tesla_angular/index.html');
+})
 
 app.post("/getcustomerrequests", (req, res) => {
     let a = req.body
