@@ -60,21 +60,26 @@ app.get("/getallcustomer", (req, res) => {
 })
 
 app.get("/admin",(req,res)=>{
+    res.set('Cache-Control', 'no-store');
     res.sendFile(__dirname + '/tesla_angular/index.html');
+    
 })
 app.get("/login",(req,res)=>{
     res.sendFile(__dirname + '/tesla_angular/index.html');
 })
 app.get("/superadmin",(req,res)=>{
+    res.set('Cache-Control', 'no-store');
     res.sendFile(__dirname + '/tesla_angular/index.html');
 })
 app.get("/drive",(req,res)=>{
     res.sendFile(__dirname + '/tesla_angular/index.html');
 })
 app.get("/admin/accept",(req,res)=>{
+    res.set('Cache-Control', 'no-store');
     res.sendFile(__dirname + '/tesla_angular/index.html');
 })
 app.get("/admin/reject",(req,res)=>{
+    res.set('Cache-Control', 'no-store');
     res.sendFile(__dirname + '/tesla_angular/index.html');
 })
 
